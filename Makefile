@@ -1,5 +1,5 @@
 COMPILER=latexmk
-NAME=concepts_meca
+NAME=concepts_MG1100
 
 all: $(NAME).tex
 	$(COMPILER) -pdf -pdflatex="pdflatex -shell-escape -enable-write18" \
