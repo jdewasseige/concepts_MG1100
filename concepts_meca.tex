@@ -1,0 +1,30 @@
+\documentclass[12pt,oneside,a4paper]{article}
+
+\usepackage{./custom}
+
+\graphicspath{{./img/}}
+
+\newcommand{\strain}[1]{\varepsilon_{\text{#1}}}
+\newcommand{\myref}[1]{(\ref{#1})}
+
+\title{Concepts of Mechanics for Background Validation}
+\author{John dW}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\input{./continuous_media_elasticity}
+\newpage
+\input{./fluid}
+\newpage
+\input{./rigid_body_dynamics}
+\newpage
+\input{./beams}
+
+\part*{Appendix}
+\appendix
+
+\input{./components_inertia}
+
+\end{document}

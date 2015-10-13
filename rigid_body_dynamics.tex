@@ -1,0 +1,71 @@
+\section{Rigid body dynamics}
+\subsection{Velocity of a point on a rigid body}
+The velocity $v$ of a point with position vector $x$ 
+belonging to the rigid body is given by
+\[ v = v_C + \omega \times (x - x_C) \]
+where $v_C$ and $\omega$ be respectively the velocity vector
+of the center of inertia and the angular velocity vector
+and $x_C$ the position vector of the center of inertia.
+
+\subsection{Moment of inertia}
+The matrix of inertia is the following
+\[ 
+  J =
+  \begin{bmatrix}
+    J_{xx} & J_{xy} & J_{xz} \\    
+    J_{yx} & J_{yy} & J_{yz} \\
+    J_{zx} & J_{zy} & J_{zz} \\
+  \end{bmatrix}
+\]
+
+The general formula for finding its components is given by
+\begin{equation}
+  J_{\Delta} = \iiint d(u,\Delta)^2 \rho \dif V
+  \label{eq:component_inertia}
+\end{equation}
+where $d(x,\Delta)$ is the distance between a point $u$ in the solid 
+and the axis $\Delta$.
+The inertia matrices are given here below for the solid sphere
+and cylinder but no calculations are made.
+To understand how to apply equation~\myref{eq:component_inertia}
+see Appendix~\ref{app:inertia_sphere}.
+
+The physical unit of the components
+are $\si[inter-unit-separator=$\cdot$]{\kilo\gram\meter\squared}$.
+It is a symetric and positive semi-definite matrix.
+The diagonal components $J_{ii}$ of the matrix are always non-zero
+since it would mean an infinite angular acceleration
+around the $x$-axis.
+The diagonal components $J_{ij}$ indicates us how the object
+is going to be accelerated around the $j$-axis when a torque
+is applied around the $i$-axis.
+This has no sense for symetric objets,
+therefore non-diagonal components are zero.
+ 
+\subsubsection*{Cylinder}
+We will first derive the components of the inertia matrix
+of a cylindrical rigid body with mass $M$,
+height $H$, circular cross-section with radius $R$,
+with its axis along the $z$-axis.
+
+\[ 
+  J = M
+  \begin{bmatrix}
+    \frac{1}{12} H^2 + \frac{1}{4} R^2 & 0 & 0 \\    
+    0 & \frac{1}{12} H^2 + \frac{1}{4} R^2 & 0 \\
+    0 & 0 & \frac{1}{2} M R^2 \\
+  \end{bmatrix}
+\]
+
+
+\subsubsection*{Sphere}
+Now with spherical rigid body of mass $M$ and radius $R$.
+
+\[ 
+  J = M
+  \begin{bmatrix}
+    \frac{2}{5} M R^2 & 0 & 0 \\    
+    0 & \frac{2}{5} M R^2 & 0 \\
+    0 & 0 & \frac{2}{5} M R^2 \\
+  \end{bmatrix}
+\]
